@@ -8,6 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<hr>
 		<?php echo form_open('artikel/edit_proses', 'name="formTambah"'); ?>
 			<?php echo form_hidden('id', $query->id); ?>
+			<?php echo form_hidden('tanggal_edit', date('Y-m-d H:i:s')); ?>
 			<div class="form-group">
 				<label>Judul</label>
 				<input type="text" class="form-control" name="judul" value="<?php echo $query->judul; ?>" required="">

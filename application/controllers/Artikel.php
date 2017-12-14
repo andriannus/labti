@@ -31,17 +31,39 @@ class Artikel extends CI_Controller {
 		);
 
 		$this->artikel->insert($data);
-		redirect('admin/dashboard');
+		redirect('admin/artikel');
 	}
 
 	public function edit($id)
 	{
-		$data['title'] = 'Tambah Artikel - JelajahSatwa.com';
+		$query = $this->artikel->get_one($id)->row();
+
+		$data['title'] = $query->judul.' - JelajahSatwa.com';
 		$data['page'] = 'artikel/edit_artikel';
-		$data['query'] = $this->artikel->get_one($id)->row();
+		$data['query'] = $query;
 		$data['menu'] = 'artikel';
 
 		$this->load->view('core/layout/adminbase_app', $data);
+	}
+
+	public function edit_proses()
+	{
+		$id = $this->input->post('id');
+
+		$judul = $this->input->post('judul');
+		$kategori = $this->input->post('kategori');
+		$tanggal_edit = $this->input->post('tanggal_edit');
+		$isi = $this->input->post('isi');
+
+		$data = array(
+			'judul' => $judul,
+			'kategori' => $kategori,
+			'tanggal_edit' => $tanggal_edit,
+			'konten' => $isi
+		);
+
+		$this->artikel->update($id, $data);
+		redirect('admin/artikel');
 	}
 
 	public function toggle_status()
@@ -51,5 +73,16 @@ class Artikel extends CI_Controller {
 
 		$this->artikel->toggle_status($id, $data);
 		redirect('admin/artikel');
+	}
+
+	public function view($id)
+	{
+		$query = $this->artikel->get_one($id)->row();
+		$data['title'] = $query->judul.' - JelajahSatwa.com';
+		$data['page'] = 'artikel/tampil_artikel';
+		$data['query'] = $query;
+		$data['menu'] = 'artikel';
+
+		$this->load->view('core/layout/base_app', $data);
 	}
 }

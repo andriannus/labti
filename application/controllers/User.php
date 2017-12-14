@@ -21,6 +21,19 @@ class User extends CI_Controller {
 		}
 	}
 
+	public function edit_password()
+	{
+		if($this->session->status == 'login') {
+			$data['title'] = 'Edit Password - JelajahSatwa.com';
+			$data['page'] = 'site/edit_password';
+			$data['menu'] = 'login';
+
+			$this->load->view('core/layout/base_app', $data);
+		} else {
+			redirect('admin');
+		}
+	}
+
 	public function login_proses()
 	{
 		$username = $this->input->post('username');

@@ -21,9 +21,15 @@ class Admin extends CI_Controller {
 
 	public function artikel()
 	{
+		$sort = $this->input->get('sort');
+		$act = $this->input->get('act');
+
+		$data['sort'] = $sort;
+		$data['act'] = $act;
+
 		$data['title'] = 'Daftar Artikel - JelajahSatwa.com';
 		$data['page'] = 'admin/artikel';
-		$data['query'] = $this->artikel->get_all()->result_array();
+		$data['query'] = $this->artikel->get_all($sort, $act)->result_array();
 		$data['menu'] = 'artikel';
 
 		$this->load->view('core/layout/adminbase_app', $data);
