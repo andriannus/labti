@@ -2,6 +2,34 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
+<div class="navbar navbar-fixed-bottom">
+	<div class="container">
+		<div class="col-md-4 col-md-offset-8">
+			<?php if($this->session->flashdata('tambah') == true) { ?>
+			<div class="alert alert-success">
+				<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+				<b>Sukses!</b> Artikel berhasil ditambah.
+			</div>
+			<?php } elseif($this->session->flashdata('edit') == true) { ?>
+			<div class="alert alert-success">
+				<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+				<b>Sukses!</b> Artikel berhasil diubah.
+			</div>
+			<?php } elseif($this->session->flashdata('toggle_status') == true) { ?>
+			<div class="alert alert-success">
+				<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+				<b>Sukses!</b> Status berhasil diubah.
+			</div>
+			<?php } elseif($this->session->flashdata('hapus') == true) { ?>
+			<div class="alert alert-success">
+				<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+				<b>Sukses!</b> Artikel berhasil dihapus.
+			</div>
+			<?php } ?>
+		</div>
+	</div>
+</div>
+
 <div class="container box">
 	<h1 class="text-center text-danger margin-bottom-md">Daftar Artikel</h1>
 
@@ -127,3 +155,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</tbody>
 	</table>
 </div>
+
+<script type="text/javascript">
+	$(function(){
+
+		setTimeout(function(){
+			$('.alert').fadeOut();
+		}, 3000);
+	});
+</script>

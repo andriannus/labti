@@ -37,6 +37,12 @@ class Artikel_model extends CI_Model {
 		$this->db->update('artikel');
 	}
 
+	public function delete($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('artikel');
+	}
+
 	public function toggle_status($id, $data)
 	{
 		$this->db->where('id', $id);

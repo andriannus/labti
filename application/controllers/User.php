@@ -55,7 +55,9 @@ class User extends CI_Controller {
 
 			redirect('admin');
 		} else {
-			echo "Username atau password salah...";
+			$this->session->set_flashdata('fail', true);
+
+			redirect('user/login');
 		}
 	}
 

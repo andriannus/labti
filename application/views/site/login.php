@@ -2,6 +2,19 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
+<div class="navbar navbar-fixed-bottom">
+	<div class="container">
+		<div class="col-md-4 col-md-offset-8">
+			<?php if($this->session->flashdata('fail') == true) { ?>
+			<div class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+				<b>Gagal!</b> Username atau password salah.
+			</div>
+			<?php } ?>
+		</div>
+	</div>
+</div>
+
 <div class="container">
 	<div class="col-md-4 col-md-offset-4 box">
 		<h1 class="text-center text-danger margin-bottom-md">Login</h1>
@@ -25,3 +38,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php echo form_close(); ?>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$(function(){
+
+		setTimeout(function(){
+			$('.alert').fadeOut();
+		}, 3000);
+	});
+</script>

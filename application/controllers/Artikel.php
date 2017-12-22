@@ -35,6 +35,7 @@ class Artikel extends CI_Controller {
 		);
 
 		$this->artikel->insert($data);
+		$this->session->set_flashdata('tambah', true);
 		redirect('admin/artikel');
 	}
 
@@ -67,6 +68,15 @@ class Artikel extends CI_Controller {
 		);
 
 		$this->artikel->update($id, $data);
+		$this->session->set_flashdata('edit', true);
+		redirect('admin/artikel');
+	}
+
+	public function hapus($id)
+	{
+		$this->artikel->delete($id);
+
+		$this->session->set_flashdata('hapus', true);
 		redirect('admin/artikel');
 	}
 
@@ -76,6 +86,7 @@ class Artikel extends CI_Controller {
 		$data['status'] = $this->input->post('status');
 
 		$this->artikel->toggle_status($id, $data);
+		$this->session->set_flashdata('toggle_status', true);
 		redirect('admin/artikel');
 	}
 
