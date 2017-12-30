@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="form-group">
 				<label>Isi</label>
-				<textarea class="form-control" placeholder="Masukkan isi artikel" rows="5" name="isi" ng-model="isi" required=""></textarea>
+				<textarea id="isi-artikel" class="form-control" placeholder="Masukkan isi artikel" rows="5" name="isi" ng-model="isi"></textarea>
 			</div>
 			<div class="form-group">
 				<button class="btn btn-success" type="submit" ng-show="formTambah.$valid">
@@ -34,3 +34,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </div>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#isi-artikel').summernote({
+			height: 150,
+			minHeight: null,
+			maxHeight: null
+		});
+	})
+</script>

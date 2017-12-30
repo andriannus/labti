@@ -39,64 +39,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<hr>
 
-	<table class="table table-striped">
+	<table id="table-artikel" class="table table-striped" cellspacing="0" width="100%">
 		<thead>
 			<tr>
 				<th class="text-center">No.</th>
-				<th class="text-center">
-					<?php
-						if($sort == 'judul' && $act == 'asc') {
-					?>
-					<form class="no-margin-bottom" method="get" action="<?php echo base_url('admin/artikel'); ?>">
-						<?php echo form_hidden('sort', 'judul'); ?>
-						<?php echo form_hidden('act', 'desc'); ?>
-						<button class="btn-table" type="submit">Judul <i class="fa fa-caret-down"></i></button>
-					</form>
-					<?php
-						} elseif($sort == 'judul' && $act == 'desc') {
-					?>
-					<form class="no-margin-bottom" method="get" action="<?php echo base_url('admin/artikel'); ?>">
-						<?php echo form_hidden('sort', 'judul'); ?>
-						<?php echo form_hidden('act', 'asc'); ?>
-						<button class="btn-table" type="submit">Judul <i class="fa fa-caret-up"></i></button>
-					</form>
-					<?php
-						} else {
-					?>
-					<form class="no-margin-bottom" method="get" action="<?php echo base_url('admin/artikel'); ?>">
-						<?php echo form_hidden('sort', 'judul'); ?>
-						<?php echo form_hidden('act', 'desc'); ?>
-						<button class="btn-table" type="submit">Judul <i class="fa fa-caret-down"></i></button>
-					</form>
-					<?php } ?>
-				</th>
-				<th class="text-center">
-					<?php
-						if($sort == 'kategori' && $act == 'asc') {
-					?>
-					<form class="no-margin-bottom" method="get" action="<?php echo base_url('admin/artikel'); ?>">
-						<?php echo form_hidden('sort', 'kategori'); ?>
-						<?php echo form_hidden('act', 'desc'); ?>
-						<button class="btn-table" type="submit">Kategori <i class="fa fa-caret-down"></i></button>
-					</form>
-					<?php
-						} elseif($sort == 'kategori' && $act == 'desc') {
-					?>
-					<form class="no-margin-bottom" method="get" action="<?php echo base_url('admin/artikel'); ?>">
-						<?php echo form_hidden('sort', 'kategori'); ?>
-						<?php echo form_hidden('act', 'asc'); ?>
-						<button class="btn-table" type="submit">Kategori <i class="fa fa-caret-up"></i></button>
-					</form>
-					<?php
-						} else {
-					?>
-					<form class="no-margin-bottom" method="get" action="<?php echo base_url('admin/artikel'); ?>">
-						<?php echo form_hidden('sort', 'kategori'); ?>
-						<?php echo form_hidden('act', 'desc'); ?>
-						<button class="btn-table" type="submit">Kategori <i class="fa fa-caret-down"></i></button>
-					</form>
-					<?php } ?>
-				</th>
+				<th class="text-center">Judul</th>
+				<th class="text-center">Kategori</th>
 				<th class="text-center">Tanggal Posting</th>
 				<th class="text-center">Tanggal Edit</th>
 				<th class="text-center">Status</th>
