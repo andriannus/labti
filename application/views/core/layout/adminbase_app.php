@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<html ng-app="">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<!-- Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/bootstrap/css/bootstrap.min.css'); ?>">
+
+		<!-- DataTable CSS -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/dataTables/css/dataTables.bootstrap.min.css'); ?>">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/responsive/css/responsive.bootstrap.min.css'); ?>">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/responsive/css/responsive.dataTables.min.css'); ?>">
@@ -20,8 +22,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<!-- CSS Admin -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/admin.css'); ?>">
-
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/summernote/summernote.css'); ?>">
 		
 		<!-- jQuery -->
 		<script src="<?php echo base_url('asset/js/jquery.min.js'); ?>"></script>
@@ -52,10 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<script src="<?php echo base_url('asset/responsive/js/dataTables.responsive.min.js'); ?>"></script>
 		<script src="<?php echo base_url('asset/responsive/js/responsive.bootstrap.min.js'); ?>"></script>
 
-		<!-- Summernote -->
-		<script src="<?php echo base_url('asset/summernote/summernote.min.js'); ?>"></script>
-
-		<!-- AngularJS -->
-		<script src="<?php echo base_url('asset/angular/angular.min.js'); ?>"></script>
+		<!-- CKEditor -->
+		<script src="<?php echo base_url('asset/ckeditor/ckeditor.js'); ?>"></script>
 	</body>
 </html>

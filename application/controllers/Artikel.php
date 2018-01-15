@@ -25,7 +25,7 @@ class Artikel extends CI_Controller {
 	public function tambah_proses()
 	{
 		$judul = $this->input->post('judul');
-		$kategori = $this->input->post('kategori');
+		$kategori = strtolower($this->input->post('kategori'));
 		$isi = $this->input->post('isi');
 
 		$data = array(
@@ -56,7 +56,7 @@ class Artikel extends CI_Controller {
 		$id = $this->input->post('id');
 
 		$judul = $this->input->post('judul');
-		$kategori = $this->input->post('kategori');
+		$kategori = strtolower($this->input->post('kategori'));
 		$tanggal_edit = $this->input->post('tanggal_edit');
 		$isi = $this->input->post('isi');
 
@@ -88,16 +88,5 @@ class Artikel extends CI_Controller {
 		$this->artikel->toggle_status($id, $data);
 		$this->session->set_flashdata('toggle_status', true);
 		redirect('admin/artikel');
-	}
-
-	public function view($id)
-	{
-		$query = $this->artikel->get_one($id)->row();
-		$data['title'] = $query->judul.' - JelajahSatwa.com';
-		$data['page'] = 'artikel/tampil_artikel';
-		$data['query'] = $query;
-		$data['menu'] = 'artikel';
-
-		$this->load->view('core/layout/base_app', $data);
 	}
 }

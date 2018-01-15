@@ -22,12 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<textarea class="form-control" rows="5" name="isi" required=""><?php echo $query->konten; ?></textarea>
 			</div>
 			<div class="form-group">
-				<button class="btn btn-success" type="submit" ng-show="formTambah.$valid">
-					<i class="fa fa-check"></i> Submit
-				</button>
-				<button class="btn btn-success" type="submit" ng-show="formTambah.$invalid" disabled="">
-					<i class="fa fa-check"></i> Submit
-				</button>
+				<button class="btn btn-success" type="submit"><i class="fa fa-check"></i> Submit</button>
 				<a class="btn btn-danger" href="<?php echo base_url('admin/artikel'); ?>">
 					<i class="fa fa-arrow-left"></i> Back
 				</a>

@@ -21,6 +21,14 @@ class User extends CI_Controller {
 		}
 	}
 
+	public function register()
+	{
+		$data['title'] = 'Register - JelajahSatwa.com';
+		$data['page'] = 'site/register';
+
+		$this->load->view('core/layout/base_app', $data);
+	}
+
 	public function edit_password()
 	{
 		if($this->session->status == 'login') {
@@ -44,21 +52,48 @@ class User extends CI_Controller {
 					'password' => md5($password)
 					);
 
-		$cek = $this->user->get_user($where)->num_rows();
+		$result = $this->user->get_user($where);
 
-		if($cek > 0) {
+		if($result) {
 			$data_session = array(
 							'nama' => $username,
 							'status' => 'login'
 							);
 			$this->session->set_userdata($data_session);
 
-			redirect('admin');
+			$message['success'] = true;
 		} else {
-			$this->session->set_flashdata('fail', true);
-
-			redirect('user/login');
+			$message['success'] = false;
 		}
+		echo json_encode($message);
+	}
+
+	public function check_username()
+	{
+		$username = $this->input->post('username');
+
+		$result = $this->user->check_username($username);
+		if ($result) {
+			$message['success'] = true;
+		} else {
+			$message['message'] = false;
+		}
+		echo json_encode($message);
+	}
+
+	public function register_proses()
+	{
+		$data['username'] = $this->input->post('username');
+		$data['password'] = md5($this->input->post('password'));
+		$data['email'] = $this->input->post('email');
+
+		$result = $this->user->create($data);
+		if ($result) {
+			$message['success'] = true;
+		} else {
+			$message['success'] = false;
+		}
+		echo json_encode($message);
 	}
 
 	public function logout()

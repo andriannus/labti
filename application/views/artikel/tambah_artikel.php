@@ -9,21 +9,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php echo form_open('artikel/tambah_proses', 'name="formTambah"'); ?>
 			<div class="form-group">
 				<label>Judul</label>
-				<input type="text" class="form-control" placeholder="Masukkan judul" name="judul" ng-model="judul" required="">
+				<input type="text" class="form-control" placeholder="Masukkan judul" name="judul" required="">
 			</div>
 			<div class="form-group">
 				<label>Kategori</label>
-				<input type="text" class="form-control" placeholder="Masukkan kategori" name="kategori" ng-model="kategori" required="">
+				<input type="text" class="form-control" placeholder="Masukkan kategori" name="kategori" required="">
 			</div>
 			<div class="form-group">
 				<label>Isi</label>
-				<textarea id="isi-artikel" class="form-control" placeholder="Masukkan isi artikel" rows="5" name="isi" ng-model="isi"></textarea>
+				<textarea id="editor" class="form-control" placeholder="Masukkan isi artikel" rows="5" name="isi" style="display: none;"></textarea>
 			</div>
 			<div class="form-group">
-				<button class="btn btn-success" type="submit" ng-show="formTambah.$valid">
-					<i class="fa fa-check"></i> Submit
-				</button>
-				<button class="btn btn-success" type="submit" ng-show="formTambah.$invalid" disabled="">
+				<button class="btn btn-success" type="submit">
 					<i class="fa fa-check"></i> Submit
 				</button>
 				<a class="btn btn-danger" href="<?php echo base_url('admin/artikel'); ?>">
@@ -36,10 +33,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('#isi-artikel').summernote({
-			height: 150,
-			minHeight: null,
-			maxHeight: null
-		});
+		ClassicEditor
+			.create(document.querySelector('#editor'), {
+				toolbar: [ 'headings', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo']
+			})
+			.then(editor => {
+				console.log(Array.from( editor.ui.componentFactory.names()));
+			})
+			.catch(error => {
+				console.log(error);
+			})
 	})
 </script>

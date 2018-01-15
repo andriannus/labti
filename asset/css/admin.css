@@ -13,13 +13,13 @@ body {
 	margin-bottom: 0 !important;
 }
 
-.banner-admin {
-	margin-top: -20px;
-}
-
 .btn-table {
 	padding: 0;
 	border: 0;
 	margin: 0;
 	background-color: transparent;
+}
+
+.ck-editor__editable {
+	min-height: 300px;
 }

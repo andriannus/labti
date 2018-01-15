@@ -59,21 +59,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="modal-body">
 					<div class="form-group">
 						<label>Password Lama</label>
-						<input type="password" class="form-control" placeholder="Masukkan Password" name="password_lama" ng-model="password_lama" required="">
+						<input type="password" class="form-control" placeholder="Masukkan Password" name="passold" required>
 					</div>
 					<div class="form-group">
 						<label>Password Baru</label>
-						<input type="password" class="form-control" placeholder="Masukkan Password" name="password_baru" ng-model="password_baru" required="">
+						<input type="password" class="form-control" placeholder="Masukkan Password" name="passnew" required>
 					</div>
 					<div class="form-group">
 						<label>Konfirmasi Password</label>
-						<input type="password" class="form-control" placeholder="Masukkan Password" name="password_konfirmasi" ng-model="password_konfirmasi" required="">
+						<input type="password" class="form-control" placeholder="Masukkan Password" name="passconf" required>
 					</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-				<button class="btn btn-primary" ng-show="login.$valid">Submit</button>
-				<button class="btn btn-primary" ng-show="login.$invalid" disabled>Submit</button>
+				<button class="btn btn-primary">Submit</button>
+				<button class="btn btn-primary" disabled>Loading...</button>
 			</div>
 			</form>
 		</div><!-- /.modal-content -->

@@ -39,3 +39,11 @@ footer a{
 .padding-md {
 	padding: 15px;
 }
+
+.no-margin-bottom {
+	margin-bottom: 0 !important;
+}
+
+.banner {
+	margin-top: -20px;
+}
