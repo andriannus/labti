@@ -30,10 +30,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<input type="password" class="form-control" placeholder="Konfirmasi Password" name="passconf">
 			</div>
 			<div class="form-group">
-				<label>Email</label>
-				<input type="email" class="form-control" placeholder="Masukkan Email" name="email">
-			</div>
-			<div class="form-group">
 				<button id="registerButton" class="btn btn-primary btn-lg btn-block" type="button">Submit</button>
 				<button id="loadingButton" class="btn btn-primary btn-lg btn-block" type="button" disabled style="display: none;">Loading...</button>
 			</div>

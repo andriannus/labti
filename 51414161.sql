@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2017 at 12:55 AM
+-- Generation Time: Jan 17, 2018 at 06:32 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -33,7 +33,7 @@ CREATE TABLE `artikel` (
   `judul` varchar(100) NOT NULL,
   `kategori` varchar(30) NOT NULL,
   `tanggal_post` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `tanggal_edit` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `tanggal_edit` timestamp NULL DEFAULT NULL,
   `status` char(2) NOT NULL DEFAULT '1',
   `konten` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -43,12 +43,8 @@ CREATE TABLE `artikel` (
 --
 
 INSERT INTO `artikel` (`id`, `judul`, `kategori`, `tanggal_post`, `tanggal_edit`, `status`, `konten`) VALUES
-(1, 'Gajah, hewan penuh solidaritas', 'herbivora', '2017-11-24 08:57:20', '2017-12-12 15:14:28', '0', 'Isi artikel yeah..'),
-(2, 'Anjing, si hewan yang setia', 'mamalia', '2017-11-24 09:21:54', '2017-11-24 09:21:54', '0', 'Isi artikel'),
-(3, 'Harimau Sumatera, si cantik yang kian berkurang', 'berita', '2017-11-24 18:17:20', '2017-11-24 18:17:20', '0', 'Isi artikel..'),
-(4, 'Si badak yang kuat', 'mamalia', '2017-11-24 18:19:06', '2017-11-24 18:19:06', '0', 'Isi artikel..'),
-(5, 'Ikan mas yang banyak durinya', 'ikan', '2017-11-24 18:19:54', '2017-11-24 18:19:54', '0', 'Isi artikel..'),
-(6, 'Paus sperma yang sangat besar', 'ikan', '2017-11-24 18:56:58', '2017-11-24 18:56:58', '0', 'Isi artikel');
+(57, 'Paus sperma yang sangat besar', 'mamalia', '2018-01-17 03:15:54', '2018-01-16 22:02:33', '0', '<p><strong>Tes</strong></p>'),
+(59, 'Paus sperma yang sangat besar', 'mamalia', '2018-01-17 03:27:49', NULL, '1', '<p>Tes</p>');
 
 -- --------------------------------------------------------
 
@@ -67,7 +63,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3');
+(16, 'admin', 'e10adc3949ba59abbe56e057f20f883e');
 
 --
 -- Indexes for dumped tables
@@ -93,12 +89,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

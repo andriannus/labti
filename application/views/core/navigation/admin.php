@@ -32,50 +32,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<?php } ?>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <i class="fa fa-caret-down"></i></a>
-					<ul class="dropdown-menu">
-						<li>
-							<a href="#" data-toggle="modal" data-target="#myModal">Ubah Password</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url('user/logout'); ?>"> Logout</a>
-						</li>
-					</ul>
+				<li>
+					<a href="<?php echo base_url('user/logout'); ?>"><i class="fa fa-sign-out"></i> Logout</a>
 				</li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
 </nav>
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-	<div class="modal-dialog modal-sm" role="document">
-		<div class="modal-content">
-			<form method="post" action="<?php echo base_url('user/login_proses'); ?>" class="no-margin-bottom" name="login">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Ubah Password</h4>
-			</div>
-			<div class="modal-body">
-					<div class="form-group">
-						<label>Password Lama</label>
-						<input type="password" class="form-control" placeholder="Masukkan Password" name="passold" required>
-					</div>
-					<div class="form-group">
-						<label>Password Baru</label>
-						<input type="password" class="form-control" placeholder="Masukkan Password" name="passnew" required>
-					</div>
-					<div class="form-group">
-						<label>Konfirmasi Password</label>
-						<input type="password" class="form-control" placeholder="Masukkan Password" name="passconf" required>
-					</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-				<button class="btn btn-primary">Submit</button>
-				<button class="btn btn-primary" disabled>Loading...</button>
-			</div>
-			</form>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->

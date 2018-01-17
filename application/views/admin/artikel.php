@@ -64,8 +64,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<td><?php echo $no; ?></td>
 				<td><?php echo $artikel['judul']; ?></td>
 				<td><?php echo $artikel['kategori']; ?></td>
-				<td><?php echo $artikel['tanggal_post']; ?></td>
-				<td><?php echo $artikel['tanggal_edit']; ?></td>
+				<td><?php echo date_format(date_create($artikel['tanggal_post']), 'd/m/Y - H:i'); ?></td>
+				<td>
+					<?php 
+						if(empty($artikel['tanggal_edit'])) { 
+							echo "-";
+						} else {
+							echo date_format(date_create($artikel['tanggal_edit']), 'd/m/Y - H:i');
+						}
+					?>
+				</td>
 				<td>
 				<?php
 					if($artikel['status'] == 1) { 

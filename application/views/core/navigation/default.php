@@ -27,15 +27,19 @@
 				<input type="text" /><input type="submit" value="" />
 			</form>
 		</div>
-		<?php if($this->session->status == 'login') { ?>
+		
 		<div class="userinfo">
 			<div class="user">
 				<ul>
+					<?php if($this->session->status == 'login') { ?>
 					<li><a href="<?php echo base_url('admin') ?>"><img src="<?php echo base_url('asset/images/user-pic.png') ?>" title="user-name" /><span>Admin</span></a></li>
+					<?php } else { ?>
+					<li><a href="<?php echo base_url('user/login') ?>"><img src="<?php echo base_url('asset/images/cicak.jpg') ?>" title="Login" /><span>JelajahSatwa</span></a></li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>
-		<?php } ?>
+		
 		<div class="clear"> </div>
 	</div>
 </div>

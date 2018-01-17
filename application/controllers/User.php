@@ -85,7 +85,6 @@ class User extends CI_Controller {
 	{
 		$data['username'] = $this->input->post('username');
 		$data['password'] = md5($this->input->post('password'));
-		$data['email'] = $this->input->post('email');
 
 		$result = $this->user->create($data);
 		if ($result) {
