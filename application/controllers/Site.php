@@ -28,12 +28,16 @@ class Site extends CI_Controller {
 	public function view($id)
 	{
 		$query = $this->artikel->get_one($id)->row();
-		$data['title'] = $query->judul.' - JelajahSatwa.com';
-		$data['page'] = 'artikel/tampil_artikel';
-		$data['query'] = $query;
-		$data['menu'] = 'artikel';
+		if (count($query) > 0) {
+			$data['title'] = $query->judul.' - JelajahSatwa.com';
+			$data['page'] = 'artikel/tampil_artikel';
+			$data['query'] = $query;
+			$data['menu'] = 'artikel';
 
-		$this->load->view('core/layout/base_app', $data);
+			$this->load->view('core/layout/base_app', $data);
+		} else {
+			$this->error404();
+		}
 	}
 
 	public function error404()

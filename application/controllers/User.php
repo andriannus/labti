@@ -15,7 +15,7 @@ class User extends CI_Controller {
 			$data['page'] = 'site/login';
 			$data['menu'] = 'login';
 
-			$this->load->view('core/layout/base_app', $data);
+			$this->load->view('core/layout/userbase_app', $data);
 		} else {
 			redirect('admin');
 		}
@@ -26,7 +26,7 @@ class User extends CI_Controller {
 		$data['title'] = 'Register - JelajahSatwa.com';
 		$data['page'] = 'site/register';
 
-		$this->load->view('core/layout/base_app', $data);
+		$this->load->view('core/layout/userbase_app', $data);
 	}
 
 	public function edit_password()
@@ -36,7 +36,7 @@ class User extends CI_Controller {
 			$data['page'] = 'site/edit_password';
 			$data['menu'] = 'login';
 
-			$this->load->view('core/layout/base_app', $data);
+			$this->load->view('core/layout/userbase_app', $data);
 		} else {
 			redirect('admin');
 		}

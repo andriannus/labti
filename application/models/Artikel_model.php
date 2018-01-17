@@ -3,14 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Artikel_model extends CI_Model {
 
-	public function get_all($sort, $act)
+	public function get_all()
 	{
-		if(isset($sort)) {
-			$this->db->order_by($sort, $act);
-			return $this->db->get('artikel');
-		} else {
-			return $this->db->get('artikel');
-		}
+		$this->db->order_by('id', 'desc');
+		return $this->db->get('artikel');
 	}
 
 	public function get_all_home()

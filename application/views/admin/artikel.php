@@ -39,7 +39,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<hr>
 
-	<table id="table-artikel" class="table table-striped" cellspacing="0" width="100%">
+	<div id="loading" class="text-center">
+		<i class="fa fa-spin fa-spinner fa-5x"></i>
+	</div>
+
+	<table id="table-artikel" class="table table-striped" cellspacing="0" width="100%" style="display: none;">
 		<thead>
 			<tr>
 				<th class="text-center">No.</th>
@@ -91,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<a class="btn btn-success" href="<?php echo base_url('artikel/edit/'.$artikel['id']); ?>">
 						<i class="fa fa-pencil"></i>
 					</a>
-					<a class="btn btn-danger" href="<?php echo base_url('artikel/hapus/'.$artikel['id']); ?>">
+					<a id="btnDelete" class="btn btn-danger" href="javascript:void(0);" data="<?php echo $artikel['id']; ?>">
 						<i class="fa fa-trash"></i>
 					</a>
 				</td>
@@ -105,7 +109,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 
 <script type="text/javascript">
-	$(function(){
+	$(document).ready(function(){
+		$('a#btnDelete').click(function(){
+			var id = $(this).attr('data');
+			var check = confirm('Anda ingin menghapus artikel ini?');
+
+			if(check) {
+				window.location.replace('<?php echo base_url()."artikel/hapus/" ?>' + id);
+			}
+		})
+
+		$('#table-artikel').DataTable({
+			responsive: true
+		});
+		
+		$('#loading').hide();
+		$('#table-artikel').show();
 
 		setTimeout(function(){
 			$('.alert').fadeOut();

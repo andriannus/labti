@@ -19,7 +19,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="form-group">
 				<label>Isi</label>
-				<textarea class="form-control" rows="5" name="isi" required=""><?php echo $query->konten; ?></textarea>
+				<div id="loading" class="text-center">
+					<i class="fa fa-spin fa-spinner fa-5x"></i>
+				</div>
+				<textarea id="editor" class="form-control" placeholder="Masukkan isi artikel" rows="5" name="isi" style="display: none;"><?php echo $query->konten; ?></textarea>
 			</div>
 			<div class="form-group">
 				<button class="btn btn-success" type="submit"><i class="fa fa-check"></i> Submit</button>
@@ -31,3 +34,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </div>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		ClassicEditor
+			.create(document.querySelector('#editor'), {
+				toolbar: [ 'headings', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo']
+			})
+			.then(editor => {
+				console.log(Array.from( editor.ui.componentFactory.names()));
+			})
+			.catch(error => {
+				console.log(error);
+			});
+
+		$('#loading').hide();
+	})
+</script>

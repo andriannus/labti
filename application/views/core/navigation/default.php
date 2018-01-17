@@ -1,57 +1,41 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-
-<nav class="navbar navbar-inverse navbar-static-top">
-	<div class="container">
-	<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-			aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="<?php echo base_url('site/index'); ?>">Jelajah Satwa</a>
+<div class="header">
+	<div class="wrap">
+		<div class="logo">
+			<a href="<?php echo base_url() ?>"><img src="<?php echo base_url('asset/images/logo.png') ?>" title="pinbal" /></a>
 		</div>
-
-	<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<?php if(isset($menu) && $menu == 'about') { ?>
-				<li class="active">
-					<a href="<?php echo base_url('site/about'); ?>">
-					<i class="fa fa-question-circle"></i> About</a>
-				</li>
-				<?php } else { ?>
-				<li>
-					<a href="<?php echo base_url('site/about'); ?>">
-					<i class="fa fa-question-circle"></i> About</a>
-				</li>
-				<?php } ?>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<?php if($this->session->status != 'login') { ?>
-					<?php if(isset($menu) && $menu == 'login') { ?>
-					<li class="active">
-						<a href="<?php echo base_url('user/login'); ?>">
-						<i class="fa fa-sign-in"></i> Login</a>
-					</li>
-					<?php } else { ?>
-					<li>
-						<a href="<?php echo base_url('user/login'); ?>">
-						<i class="fa fa-sign-in"></i> Login</a>
-					</li>
-					<?php } ?>
-				<?php } else { ?>
-				<li>
-					<a href="<?php echo base_url('admin/index'); ?>">
-					<i class="fa fa-sign-in"></i> Admin</a>
-				</li>
-				<?php } ?>
-			</ul>
-		</div><!-- /.navbar-collapse -->
-	</div><!-- /.container-fluid -->
-</nav>
-
+		<div class="nav-icon">
+			 <a href="#" class="right_bt" id="activator"><span> </span> </a>
+		</div>
+		 <div class="box" id="box">
+			 <div class="box_content">        					                         
+				<div class="box_content_center">
+				 	<div class="form_content">
+						<div class="menu_box_list">
+							<ul>
+								<li><a href="<?php echo base_url('site'); ?>"><span>Home</span></a></li>
+								<li><a href="<?php echo base_url('site/about'); ?>"><span>About</span></a></li>
+								<div class="clear"> </div>
+							</ul>
+						</div>
+						<a class="boxclose" id="boxclose"> <span> </span></a>
+					</div>                                  
+				</div> 	
+			</div> 
+		</div>       	  
+		<div class="top-searchbar">
+			<form>
+				<input type="text" /><input type="submit" value="" />
+			</form>
+		</div>
+		<?php if($this->session->status == 'login') { ?>
+		<div class="userinfo">
+			<div class="user">
+				<ul>
+					<li><a href="<?php echo base_url('admin') ?>"><img src="<?php echo base_url('asset/images/user-pic.png') ?>" title="user-name" /><span>Admin</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<?php } ?>
+		<div class="clear"> </div>
+	</div>
+</div>

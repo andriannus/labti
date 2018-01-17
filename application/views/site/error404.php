@@ -2,13 +2,20 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<div class="container">
-	<div class="col-md-2 col-md-offset-5 box padding-md text-center">
-		<i class="fa fa-search fa-5x"></i>
-
-		<br><br>
-
-		<p>- Page Not Found -</p>
+<div class="content">
+	<div class="wrap">
+		<div class="single-page">
+			<div class="single-page-artical">
+				<div class="artical-content">
+					<p style="font-size: 7rem; text-align: center;">
+						404
+					</p>
+					<p style="font-size: 2rem; text-align: center;">
+						Page Not Found
+					</p>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
 	</div>
 </div>
-

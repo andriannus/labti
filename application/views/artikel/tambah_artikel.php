@@ -17,6 +17,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="form-group">
 				<label>Isi</label>
+				<div id="loading" class="text-center">
+					<i class="fa fa-spin fa-spinner fa-5x"></i>
+				</div>
 				<textarea id="editor" class="form-control" placeholder="Masukkan isi artikel" rows="5" name="isi" style="display: none;"></textarea>
 			</div>
 			<div class="form-group">
@@ -42,6 +45,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			})
 			.catch(error => {
 				console.log(error);
-			})
+			});
+
+		$('#loading').hide();
 	})
 </script>
