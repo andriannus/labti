@@ -10,7 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<title><?php echo $title; ?></title>
 		<link href="<?php echo base_url('asset/css/style.css') ?>" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('asset/images/fav-icon.png') ?>" />
+		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('asset/images/fav-icon.jpg') ?>" />
 		<script type="application/x-javascript">
 		addEventListener("load", function() { 
 			setTimeout(hideURLbar, 0);
@@ -94,24 +94,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						$handler.wookmark(options);
 					});
 				}
-				/**
-				* When scrolled all the way to the bottom, add more tiles
-				*/
-				function onScroll() {
-					// Check if we're within 100 pixels of the bottom edge of the broser window.
-					var winHeight = window.innerHeight ? window.innerHeight : $window.height(), // iphone fix
-					closeToBottom = ($window.scrollTop() + winHeight > $document.height() - 100);
-
-					if (closeToBottom) {
-						// Get the first then items from the grid, clone them, and add them to the bottom of the grid
-						var $items = $('li', $tiles),
-						$firstTen = $items.slice(0, 10);
-						$tiles.append($firstTen.clone());
-
-						applyLayout();
-					}
-				};
-
+				
 				// Call the layout function for the first time
 				applyLayout();
 

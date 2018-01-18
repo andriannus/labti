@@ -35,6 +35,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="form-group text-center">
 				<p>Sudah punya akun? <a href="<?php echo base_url('user/login') ?>">Masuk</a></p>
+
+				<hr>
+				<p><a class="btn btn-default" href="<?php echo base_url('site') ?>"><i class="fa fa-home"></i> Home</a></p>
 			</div>
 		</form>
 	</div>

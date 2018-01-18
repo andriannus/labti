@@ -15,7 +15,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="form-group">
 				<label>Kategori</label>
-				<input type="text" class="form-control" name="kategori" value="<?php echo $query->kategori; ?>" required="">
+				<?php $cek = $query->kategori; ?>
+				<select name="kategori" class="form-control" required>
+					<option disabled>-- Pilih Kategori --</option>
+					<option value="cicak tembok" <?php if ($cek == 'cicak tembok') { echo 'selected'; } ?>>Cicak Tembok</option>
+					<option value="cicak kayu" <?php if ($cek == 'cicak kayu') { echo 'selected'; } ?>>Cicak Kayu</option>
+					<option value="cicak gula" <?php if ($cek == 'cicak gula') { echo 'selected'; } ?>>Cicak Gula</option>
+					<option value="cicak batu" <?php if ($cek == 'cicak batu') { echo 'selected'; } ?>>Cicak Batu</option>
+					<option value="cicak terbang" <?php if ($cek == 'cicak terbang') { echo 'selected'; } ?>>Cicak Terbang</option>
+				</select>
 			</div>
 			<div class="form-group">
 				<label>Isi</label>

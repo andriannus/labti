@@ -15,6 +15,15 @@ class Artikel_model extends CI_Model {
 		return $this->db->get('artikel');
 	}
 
+	public function get_all_like($q)
+	{
+		$this->db->like('judul', $q);
+		$this->db->or_like('kategori', $q);
+		$this->db->or_like('konten', $q);
+
+		return $this->db->get('artikel');
+	}
+
 	public function get_one($id)
 	{
 		$this->db->where('id', $id);

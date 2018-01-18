@@ -9,11 +9,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php echo form_open('artikel/tambah_proses', 'name="formTambah"'); ?>
 			<div class="form-group">
 				<label>Judul</label>
-				<input type="text" class="form-control" placeholder="Masukkan judul" name="judul" required="">
+				<input type="text" class="form-control" placeholder="Masukkan judul" name="judul" required>
 			</div>
 			<div class="form-group">
 				<label>Kategori</label>
-				<input type="text" class="form-control" placeholder="Masukkan kategori" name="kategori" required="">
+				<select name="kategori" class="form-control">
+					<option value="cicak tembok">Cicak Tembok</option>
+					<option value="cicak kayu">Cicak Kayu</option>
+					<option value="cicak gula">Cicak Gula</option>
+					<option value="cicak batu">Cicak Batu</option>
+					<option value="cicak terbang">Cicak Terbang</option>
+				</select>
 			</div>
 			<div class="form-group">
 				<label>Isi</label>

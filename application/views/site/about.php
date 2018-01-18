@@ -6,13 +6,11 @@
 					<h3>About</h3>
 					<hr>
 					<p class="text-justify">
-						JelajahSatwa.com adalah sebuah platform yang digunakan untuk mengenal satwa yang ada di Indonesia.
-						Adapun jenis binatang yang tersedia di platform ini, yaitu mamalia, reptil dan serangga. Selain itu,
-						ada binatang yang hidup di darat, laut, hingga udara.
+						Cicak-World.co adalah sebuah platform yang digunakan untuk mengenal lebih dekat mengenai cicak. Seperti apa cicak itu, jenis cicak, dan lain sebagainya.
 					</p>
 
 					<p class="text-justify">
-						JelajahSatwa.com dapat diakses oleh siapa saja. Baik itu anak-anak hingga orang dewasa sekalipun. Karena,
+						Cicak-World.co dapat diakses oleh siapa saja. Baik itu anak-anak hingga orang dewasa sekalipun. Karena,
 						platform ini adalah wadah untuk menjadi pengetahuan mengenai binatang.
 					</p>
 
