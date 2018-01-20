@@ -14,14 +14,14 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = 'Admin - JelajahSatwa.com';
+		$data['title'] = 'Admin - Cicak-Wworld.co';
 		$data['page'] = 'admin/index';
 		$this->load->view('core/layout/adminbase_app', $data);
 	}
 
 	public function artikel()
 	{
-		$data['title'] = 'Daftar Artikel - JelajahSatwa.com';
+		$data['title'] = 'Daftar Artikel - Cicak-Wworld.co';
 		$data['page'] = 'admin/artikel';
 		$data['query'] = $this->artikel->get_all()->result_array();
 		$data['menu'] = 'artikel';

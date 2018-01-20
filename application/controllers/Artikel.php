@@ -15,7 +15,7 @@ class Artikel extends CI_Controller {
 
 	public function tambah()
 	{
-		$data['title'] = 'Tambah Artikel - JelajahSatwa.com';
+		$data['title'] = 'Tambah Artikel - Cicak-Wworld.co';
 		$data['page'] = 'artikel/tambah_artikel';
 		$data['menu'] = 'artikel';
 
@@ -43,7 +43,7 @@ class Artikel extends CI_Controller {
 	{
 		$query = $this->artikel->get_one($id)->row();
 
-		$data['title'] = $query->judul.' - JelajahSatwa.com';
+		$data['title'] = $query->judul.' - Cicak-Wworld.co';
 		$data['page'] = 'artikel/edit_artikel';
 		$data['query'] = $query;
 		$data['menu'] = 'artikel';

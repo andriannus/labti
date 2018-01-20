@@ -11,7 +11,7 @@ class User extends CI_Controller {
 	public function login()
 	{
 		if($this->session->status != 'login') {
-			$data['title'] = 'Login - JelajahSatwa.com';
+			$data['title'] = 'Login - Cicak-Wworld.co';
 			$data['page'] = 'site/login';
 			$data['menu'] = 'login';
 
@@ -23,7 +23,7 @@ class User extends CI_Controller {
 
 	public function register()
 	{
-		$data['title'] = 'Register - JelajahSatwa.com';
+		$data['title'] = 'Register - Cicak-Wworld.co';
 		$data['page'] = 'site/register';
 
 		$this->load->view('core/layout/userbase_app', $data);
@@ -32,7 +32,7 @@ class User extends CI_Controller {
 	public function edit_password()
 	{
 		if($this->session->status == 'login') {
-			$data['title'] = 'Edit Password - JelajahSatwa.com';
+			$data['title'] = 'Edit Password - Cicak-Wworld.co';
 			$data['page'] = 'site/edit_password';
 			$data['menu'] = 'login';
 
