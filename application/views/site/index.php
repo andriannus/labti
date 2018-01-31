@@ -1,9 +1,13 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
 <div class="content">
 	<div class="wrap">
 		<div id="main" role="main">
 		<?php if (!empty($query)) { ?>
 		<ul id="tiles">
-			<!- These are our grid blocks ->
+			<!-- These are our grid blocks -->
 			<?php foreach($query as $artikel): ?>
 				<li id="post-article" data="<?php echo $artikel['id']; ?>">
 					<?php if ($artikel['kategori'] == 'cicak tembok') { ?>
@@ -31,7 +35,7 @@
 					</div>
 				</li>
 			<?php endforeach; ?>
-			<!- End of grid blocks ->
+			<!-- End of grid blocks -->
 		</ul>
 		<?php } else { ?>
 		<p>Kata kunci "<?php echo $search ?>" tidak ditemukan.</p>

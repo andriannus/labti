@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<i class="fa fa-spin fa-spinner fa-5x"></i>
 	</div>
 
-	<table id="table-artikel" class="table table-striped" cellspacing="0" width="100%" style="display: none;">
+	<table id="table-artikel" class="table table-bordered table-striped" cellspacing="0" width="100%" style="display: none;">
 		<thead>
 			<tr>
 				<th class="text-center">No.</th>
@@ -128,7 +128,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		})
 
 		$('#table-artikel').DataTable({
-			responsive: true
+			responsive: true,
+			columnDefs: [
+				{
+					targets: [5, 6],
+					orderable: false
+				}
+			]
 		});
 		
 		$('#loading').hide();

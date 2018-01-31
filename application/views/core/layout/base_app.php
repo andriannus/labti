@@ -1,9 +1,7 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -20,16 +18,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		}
 		</script>
 		</script>
-		<!-webfonts->
+		<!--webfonts-->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-		<!-webfonts->
-		<!- Global CSS for the page and tiles ->
+		<!--webfonts-->
+		<!-- Global CSS for the page and tiles -->
 		<link rel="stylesheet" href="<?php echo base_url('asset/css/main.css') ?>">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/font-awesome/css/font-awesome.min.css'); ?>">
-		<!-Global CSS for the page and tiles ->
-		<!-start-click-drop-down-menu->
+		<!--Global CSS for the page and tiles -->
+		<!--start-click-drop-down-menu-->
 		<script src="<?php echo base_url('asset/js/jquery.min.js'); ?>"></script>
-		<!-start-dropdown->
+		<!--start-dropdown-->
 		<script type="text/javascript">
 			var $ = jQuery.noConflict();
 				$(function() {
@@ -51,18 +49,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									
 			});
 		</script>
-		<!-//End-dropdown->
-		<!-//End-click-drop-down-menu->
+		<!--//End-dropdown-->
+		<!--//End-click-drop-down-menu-->
 	</head>
 	<body>
-		<!-start-wrap->
-			<!-start-header->
+		<!--start-wrap-->
+			<!--start-header-->
 			<?php $this->load->view('core/navigation/default'); ?>
-		<!-//End-header->
-		<!-start-content->
+		<!--//End-header-->
+		<!--start-content-->
 			<?php $this->load->view($page); ?>
-		<!-//End-content->
-		<!-wookmark-scripts->
+		<!--//End-content-->
+		<!--wookmark-scripts-->
 
 		<script src="<?php echo base_url('asset/js/jquery.imagesloaded.js'); ?>"></script>
 		<script src="<?php echo base_url('asset/js/jquery.wookmark.js'); ?>"></script>
@@ -102,12 +100,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				$window.bind('scroll.wookmark', onScroll);
 			})(jQuery);
 		</script>
-		<!-//wookmark-scripts->
-		<!-start-footer->
+		<!--//wookmark-scripts-->
+		<!--start-footer-->
 		<div class="footer">
 			<p>Copyright &copy; <?php echo date('Y'); ?> - Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 		</div>
-		<!-//End-footer->
-		<!-//End-wrap->
+		<!--//End-footer-->
+		<!--//End-wrap-->
 	</body>
 </html>

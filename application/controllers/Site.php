@@ -43,7 +43,7 @@ class Site extends CI_Controller {
 	public function view($id)
 	{
 		$query = $this->artikel->get_one($id)->row();
-		if (count($query) > 0) {
+		if (isset($query) > 0) {
 			$data['title'] = $query->judul.' - Cicak-Wworld.co';
 			$data['page'] = 'artikel/tampil_artikel';
 			$data['query'] = $query;

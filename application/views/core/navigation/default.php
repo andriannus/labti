@@ -1,3 +1,7 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
 <div class="header">
 	<div class="wrap">
 		<div class="logo">
@@ -24,7 +28,7 @@
 		</div>       	  
 		<div class="top-searchbar">
 			<form method="get" action="<?php echo base_url('site/cari') ?>">
-				<input type="text" name="q" <?php if (isset($search)) { echo "value = ".$search; } ?> />
+				<input type="text" name="q" placeholder="Cari judul artikel disini.." <?php if (isset($search)) { echo 'value = "'.$search.'"'; } ?> />
 				<input type="submit" value="" />
 			</form>
 		</div>

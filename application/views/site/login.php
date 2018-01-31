@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="navbar navbar-fixed-bottom">
 	<div class="container">
 		<div class="col-md-4 col-md-offset-8">
+			<!-- Alert yang tampil ketika gagal login -->
 			<div class="alert alert-danger" style="display: none;">
 				<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
 				<b>Gagal!</b> Username atau password salah.
@@ -41,15 +42,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <script type="text/javascript">
 	$(function(){
+
+		// Fungsi untuk menghilangkan Alert setelah 4 detik
 		function setTimeout(){
 			$('.alert').fadeOut(4000);
 		};
 
+		// Fungsi checkLogin dijalankan ketika tombol Submit diklik
 		$('#loginButton').click(function(){
 			checkLogin();
 		})
 
 		function checkLogin(){
+			// Ketika tombol Submit diklik, tombol Loading muncul
 			$('#loadingButton').show();
 			$('#loginButton').hide();
 
@@ -63,6 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				dataType: 'json',
 				success: function(data){
 					if(data.success){
+						// Mengganti jejak halaman login dengan halaman admin
 						window.location.replace('<?php echo base_url()."admin/index" ?>');
 					} else {
 						$('#loadingButton').hide();
