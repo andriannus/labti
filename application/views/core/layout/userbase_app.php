@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<html ng-app="">
+<html>
 	<head>
 		<title><?php echo $title; ?></title>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/bootstrap/css/bootstrap.min.css'); ?>">
@@ -20,6 +20,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<script src="<?php echo base_url('asset/bootstrap/js/bootstrap.min.js'); ?>"></script>
 
-		<script src="<?php echo base_url('asset/angular/angular.min.js'); ?>"></script>
 	</body>
 </html>

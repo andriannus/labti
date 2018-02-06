@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="col-md-4 col-md-offset-4 box">
 		<h1 class="text-center text-danger margin-bottom-md">Login</h1>
 		<hr>
-		<form id="loginForm" method="post" action="<?php echo base_url('user/login_proses') ?>">
+		<form id="loginForm" method="post" action="<?php echo base_url('user/login_admin_proses') ?>">
 			<div class="form-group">
 				<label>Username</label>
 				<input type="text" class="form-control" placeholder="Masukkan Username" name="username" autofocus="">
@@ -32,9 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<button id="loadingButton" class="btn btn-primary btn-lg btn-block" type="button" disabled style="display: none;">Loading...</button>
 			</div>
 			<div class="form-group text-center">
-				<p>Belum punya akun? <a href="<?php echo base_url('register') ?>">Daftar</a></p>
-				<hr>
-				<a class="btn btn-default" href="<?php echo base_url('site') ?>"><i class="fa fa-home"></i> Home</a>
+				<p><a class="btn btn-default" href="<?php echo base_url('site') ?>"><i class="fa fa-home"></i> Home</a></p>
 			</div>
 		</form>
 	</div>

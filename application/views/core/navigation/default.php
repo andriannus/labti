@@ -36,10 +36,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="userinfo">
 			<div class="user">
 				<ul>
-					<?php if($this->session->status == 'login') { ?>
+					<?php if($this->session->status == 'login_admin') { ?>
 					<li><a href="<?php echo base_url('admin') ?>"><img src="<?php echo base_url('asset/images/user-pic.png') ?>" title="user-name" /><span>Admin</span></a></li>
+					<?php } elseif ($this->session->status == 'login') { ?>
+					<li><a href="<?php echo base_url('user/logout') ?>"><img src="<?php echo base_url('asset/images/cicak.jpg') ?>" title="Login" /><span>Logout</span></a></li>
 					<?php } else { ?>
-					<li><a href="<?php echo base_url('user/login') ?>"><img src="<?php echo base_url('asset/images/cicak.jpg') ?>" title="Login" /><span>Cicak-World.co</span></a></li>
+					<li><a href="<?php echo base_url('login') ?>"><img src="<?php echo base_url('asset/images/cicak.jpg') ?>" title="Login" /><span>Cicak-World.co</span></a></li>
 					<?php } ?>
 				</ul>
 			</div>

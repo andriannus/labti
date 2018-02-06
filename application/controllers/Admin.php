@@ -7,8 +7,8 @@ class Admin extends CI_Controller {
 		parent::__construct();
 		$this->load->model('artikel_model', 'artikel');
 
-		if($this->session->status != 'login') {
-			redirect('user/login');
+		if($this->session->status != 'login_admin') {
+			redirect('site');
 		}
 	}
 

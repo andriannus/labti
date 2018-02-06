@@ -75,27 +75,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				result += 1;
 			}
 
-			if(passconf.val() == '') {
+			if(passconf.val() == '' || password.val() != passconf.val()) {
 				passconf.parent().addClass('has-error');
 			} else {
 				passconf.parent().removeClass('has-error');
 				result += 1;
 			}
 
-			if(password.val() != passconf.val()) {
-				passconf.parent().addClass('has-error');
-			} else {
-				passconf.parent().removeClass('has-error');
-				result += 1;
-			}
-			if(email.val() == '') {
-				email.parent().addClass('has-error');
-			} else {
-				email.parent().removeClass('has-error');
-				result += 1;
-			}
-
-			if(result == '11111'){
+			if(result == '111'){
 				$.ajax({
 					type: 'post',
 					url: '<?php echo base_url()."user/check_username"; ?>',
