@@ -2,6 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
+<!-- Template by w3layouts.com -->
+
 <!DOCTYPE HTML>
 <html>
 	<head>

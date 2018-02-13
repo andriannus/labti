@@ -6,13 +6,17 @@ class Artikel extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+
+		// Load model
 		$this->load->model('artikel_model', 'artikel');
 
-		if($this->session->status != 'login') {
-			redirect('user/login');
+		// Jika tidak login admin, akan dialihkan ke halaman awal
+		if($this->session->status != 'login_admin') {
+			redirect('site');
 		}
 	}
 
+	// url -> http://localhost/artikel/tambah
 	public function tambah()
 	{
 		$data['title'] = 'Tambah Artikel - Cicak-Wworld.co';
@@ -22,6 +26,7 @@ class Artikel extends CI_Controller {
 		$this->load->view('core/layout/adminbase_app', $data);
 	}
 
+	// Proses tambah
 	public function tambah_proses()
 	{
 		$judul = $this->input->post('judul');
@@ -39,6 +44,7 @@ class Artikel extends CI_Controller {
 		redirect('admin/artikel');
 	}
 
+	// url -> http://localhost/artikel/edit/ID
 	public function edit($id)
 	{
 		$query = $this->artikel->get_one($id)->row();
@@ -51,6 +57,7 @@ class Artikel extends CI_Controller {
 		$this->load->view('core/layout/adminbase_app', $data);
 	}
 
+	// Proses edit
 	public function edit_proses()
 	{
 		$id = $this->input->post('id');
@@ -72,6 +79,7 @@ class Artikel extends CI_Controller {
 		redirect('admin/artikel');
 	}
 
+	// url -> http://localhost/artikel/hapus/ID
 	public function hapus($id)
 	{
 		$this->artikel->delete($id);
@@ -80,6 +88,7 @@ class Artikel extends CI_Controller {
 		redirect('admin/artikel');
 	}
 
+	// Proses update status artikel
 	public function toggle_status()
 	{
 		$id = $this->input->post('id');

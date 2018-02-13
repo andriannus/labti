@@ -27,6 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div> 
 		</div>       	  
 		<div class="top-searchbar">
+			<!-- Field cari -->
 			<form method="get" action="<?php echo base_url('site/cari') ?>">
 				<input type="text" name="q" placeholder="Cari judul artikel disini.." <?php if (isset($search)) { echo 'value = "'.$search.'"'; } ?> />
 				<input type="submit" value="" />
@@ -36,6 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="userinfo">
 			<div class="user">
 				<ul>
+					<!-- Cek autentikasi -->
 					<?php if($this->session->status == 'login_admin') { ?>
 					<li><a href="<?php echo base_url('admin') ?>"><img src="<?php echo base_url('asset/images/user-pic.png') ?>" title="user-name" /><span>Admin</span></a></li>
 					<?php } elseif ($this->session->status == 'login') { ?>

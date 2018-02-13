@@ -8,9 +8,7 @@ class User extends CI_Controller {
 		$this->load->model('user_model', 'user');
 	}
 
-	/*
-	| Form Login Admin
-	*/
+	// Form login admin
 	public function login_admin()
 	{
 		if($this->session->status != 'login_admin') {
@@ -24,9 +22,7 @@ class User extends CI_Controller {
 		}
 	}
 
-	/*
-	| Form Login User
-	*/
+	// Form login user
 	public function login()
 	{
 		if($this->session->status != 'login') {
@@ -40,6 +36,7 @@ class User extends CI_Controller {
 		}
 	}
 
+	// Form register
 	public function register()
 	{
 		$data['title'] = 'Register - Cicak-Wworld.co';
@@ -48,6 +45,7 @@ class User extends CI_Controller {
 		$this->load->view('core/layout/userbase_app', $data);
 	}
 
+	// Form edit password
 	public function edit_password()
 	{
 		if($this->session->status == 'login') {
@@ -61,9 +59,7 @@ class User extends CI_Controller {
 		}
 	}
 
-	/*
-	| Login Admin
-	*/
+	// Proses login admin
 	public function login_admin_proses()
 	{
 		$username = $this->input->post('username');
@@ -91,9 +87,7 @@ class User extends CI_Controller {
 		echo json_encode($message);
 	}
 
-	/*
-	| Login User
-	*/
+	// Proses login user
 	public function login_proses()
 	{
 		$username = $this->input->post('username');
@@ -121,6 +115,7 @@ class User extends CI_Controller {
 		echo json_encode($message);
 	}
 
+	// Cek ketersediaan username
 	public function check_username()
 	{
 		$username = $this->input->post('username');
@@ -134,6 +129,7 @@ class User extends CI_Controller {
 		echo json_encode($message);
 	}
 
+	// Proses register
 	public function register_proses()
 	{
 		$data['username'] = $this->input->post('username');
@@ -149,6 +145,7 @@ class User extends CI_Controller {
 		echo json_encode($message);
 	}
 
+	// Proses logout
 	public function logout()
 	{
 		$this->session->sess_destroy();

@@ -1,3 +1,7 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
 <div class="content">
 	<div class="wrap">
 		<div class="single-page">
@@ -5,9 +9,7 @@
 				<div class="artical-content">
 					<h3><?php echo $query->judul ?></h3>
 					<hr>
-					
 						<?php echo $query->konten ?>
-					
 				</div>
 				<div class="share-artical">
 					<ul>

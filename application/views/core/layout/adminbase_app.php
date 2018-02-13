@@ -2,11 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
+<!DOCTYPE HTML>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<!-- Icon -->
 		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('asset/images/fav-icon.jpg') ?>" />
 		<title><?php echo $title; ?></title>
 
@@ -29,10 +31,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</head>
 	<body>
 		<header>
+			<!-- Load menu -->
 			<?php $this->load->view('core/navigation/admin'); ?>
 		</header>
 
 		<main>
+			<!-- Load content -->
 			<?php $this->load->view($page); ?>
 		</main>
 

@@ -5,9 +5,12 @@ class Site extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+
+		// Load model
 		$this->load->model('artikel_model', 'artikel');
 	}
 
+	// url -> http://localhost/site/
 	public function index()
 	{
 		$data['title'] = 'Informasi lengkap binatang - Cicak-Wworld.co';
@@ -16,6 +19,7 @@ class Site extends CI_Controller {
 		$this->load->view('core/layout/base_app', $data);
 	}
 
+	// url -> http://localhost/site/cari/?q=xxx
 	public function cari()
 	{
 		$q = $this->input->get('q');
@@ -31,6 +35,7 @@ class Site extends CI_Controller {
 		}
 	}
 
+	// url -> http://localhost/site/about
 	public function about()
 	{
 		$data['title'] = 'About - Cicak-Wworld.co';
@@ -40,6 +45,7 @@ class Site extends CI_Controller {
 		$this->load->view('core/layout/base_app', $data);
 	}
 
+	// url -> http://localhost/view/ID
 	public function view($id)
 	{
 		$query = $this->artikel->get_one($id)->row();
@@ -55,6 +61,7 @@ class Site extends CI_Controller {
 		}
 	}
 
+	// Fungsi yang digunakan apabila halaman tidak ditemukan
 	public function error404()
 	{
 		$data['title'] = 'Page Not Found - Cicak-Wworld.co';
