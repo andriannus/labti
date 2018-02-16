@@ -14,7 +14,7 @@ class User_model extends CI_Model {
 		}
 	}
 
-	public function get_user($where)
+	public function check_user($where)
 	{
 		$this->db->where($where);
 		$result = $this->db->get('user');
@@ -23,6 +23,18 @@ class User_model extends CI_Model {
 		} else {
 			return false;
 		}
+	}
+
+	public function get_user($where)
+	{
+		$this->db->where($where);
+		return $this->db->get('user');
+	}
+
+	public function get_one($id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->get('user');
 	}
 
 	public function create($data)

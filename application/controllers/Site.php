@@ -8,6 +8,8 @@ class Site extends CI_Controller {
 
 		// Load model
 		$this->load->model('artikel_model', 'artikel');
+		$this->load->model('komentar_model', 'komentar');
+		$this->load->model('user_model', 'user');
 	}
 
 	// url -> http://localhost/site/
@@ -45,14 +47,24 @@ class Site extends CI_Controller {
 		$this->load->view('core/layout/base_app', $data);
 	}
 
-	// url -> http://localhost/view/ID
+	// url -> http://localhost/site/view/ID
 	public function view($id)
 	{
+		$komentar = $this->komentar->get_by_article($id)->result_array();
+
+		foreach ($komentar as $komen) {
+			$user = $this->user->get_one($komen['id_user'])->row();
+		}
+
 		$query = $this->artikel->get_one($id)->row();
 		if (isset($query) > 0) {
 			$data['title'] = $query->judul.' - Cicak-Wworld.co';
 			$data['page'] = 'artikel/tampil_artikel';
 			$data['query'] = $query;
+			$data['komentar'] = $komentar;
+			if (isset($user)) {
+				$data['user'] = $user;
+			}
 			$data['menu'] = 'artikel';
 
 			$this->load->view('core/layout/base_app', $data);

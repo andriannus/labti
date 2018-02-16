@@ -99,11 +99,13 @@ class User extends CI_Controller {
 					'level' => 2
 					);
 
-		$result = $this->user->get_user($where);
+		$result = $this->user->check_user($where);
+		$user = $this->user->get_user($where)->row();
 
 		if($result) {
 			$data_session = array(
-							'nama' => $username,
+							'id_user' => $user->id, 
+							'nama' => $user->nama,
 							'status' => 'login'
 							);
 			$this->session->set_userdata($data_session);
